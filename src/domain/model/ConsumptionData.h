@@ -4,14 +4,14 @@
 class ConsumptionData
 {
 public:
-	friend class EnergyInfo;
+	friend class EnergyConsumptionService;
 
-	ConsumptionData() noexcept = default;
-	ConsumptionData(const ConsumptionData& other) noexcept = default;
-	ConsumptionData(ConsumptionData&& other) noexcept = default;
+	[[nodiscard]] ConsumptionData() noexcept = default;
+	[[nodiscard]] ConsumptionData(const ConsumptionData& other) noexcept = default;
+	[[nodiscard]] ConsumptionData(ConsumptionData&& other) noexcept = default;
 
 private:
-	ConsumptionData(UInt miliAmpere, UInt volt, UInt elapsedSeconds) :
+	ConsumptionData(UInt miliAmpere, UInt volt, UInt elapsedSeconds) noexcept :
 		_MilliAmps{ miliAmpere },
 		_Volt{ volt },
 		_ElapsedSeconds{ elapsedSeconds } {}
@@ -21,12 +21,12 @@ private:
 	UInt _ElapsedSeconds{ 0U };
 
 public:
-	UInt MiliAmps() const;
-	UInt Volt() const;
-	UInt ElapsedSeconds() const;
+	[[nodiscard]] UInt MiliAmps() const noexcept;
+	[[nodiscard]] UInt Volt() const noexcept;
+	[[nodiscard]] UInt ElapsedSeconds() const noexcept;
 
 private:
-	void MiliAmps(UInt const& value);
-	void Volt(UInt const& value);
-	void ElapsedSeconds(UInt const& value);
+	void MiliAmps(UInt const& value) noexcept;
+	void Volt(UInt const& value) noexcept;
+	void ElapsedSeconds(UInt const& value) noexcept;
 };

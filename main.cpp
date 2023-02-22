@@ -4,18 +4,23 @@
 //***************************************************
 
 #include "pch.h"
-#include "EnergyInfo.h"
-#include "EvEnergyInfo.h"
+#include "EnergyConsumptionService.h"
+#include "EvEnergyInfoAdapter.h"
+#include "EnergyInfoAdapter.h"
+
 
 int main()
 {
-	//Instance of the EnergyInfo port which returns the energy in three separate elements:
-	//milli ampere, volt and elapsed seconds
-	IEnergyInfoPtr energyInfoPort = CreateInstance(new EnergyInfo);
-	std::cout << energyInfoPort->ToString() << "\n" << std::endl;
+	//Instance of the EnergyInfoAdapter port
+	auto energyInfoPort = CreateInstance(new EnergyConsumptionService);
+	//It returns an ConsumptionData object that has three separate elements:milli ampere, volt and elapsed seconds
+	auto consumptionData = energyInfoPort->ConsumedEnergy();
 
-	//Instance of the Adapter injecting the port interface
-	//We now can get the consumed energy in kWh
-	IEvConsumedEnergyPtr evEnergyInfoAdapter = CreateInstance(new EvEnergyInfo(energyInfoPort));
+	//If we want to get the consumed energy in the detail string, we use the EnergyInfoAdapter Adapter
+	auto energyInfoAdapter = CreateInstance(new EnergyInfoAdapter(energyInfoPort));
+	std::cout << energyInfoAdapter->ToString() << "\n" << std::endl;
+
+	//If we want to get the consumed energy in kWh, we use the EvEnergyInfoAdapter Adapter
+	auto evEnergyInfoAdapter = CreateInstance(new EvEnergyInfoAdapter(energyInfoPort));
 	std::cout << evEnergyInfoAdapter->ToString() << "\n" << std::endl;
 }

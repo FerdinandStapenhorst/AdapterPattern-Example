@@ -19,8 +19,8 @@
     <Filter Include="port">
       <UniqueIdentifier>{1407c9ce-17bf-4124-bf7b-bb7cbcde3900}</UniqueIdentifier>
     </Filter>
-    <Filter Include="adapter\EvConsumption\model">
-      <UniqueIdentifier>{d6311833-5cd9-413a-bd56-9468709c820f}</UniqueIdentifier>
+    <Filter Include="adapter\Consumption">
+      <UniqueIdentifier>{d958ff15-6e28-4089-b901-766a7cc21c47}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,15 +30,15 @@
     <ClCompile Include="src\domain\model\ConsumptionData.cpp">
       <Filter>domain\model</Filter>
     </ClCompile>
-    <ClCompile Include="src\domain\EnergyInfo.cpp">
+    <ClCompile Include="src\domain\EnergyConsumptionService.cpp">
       <Filter>domain</Filter>
     </ClCompile>
-    <ClCompile Include="src\adapter\EvConsumption\EvEnergyInfo.cpp">
+    <ClCompile Include="src\adapter\EvConsumption\EvEnergyInfoAdapter.cpp">
       <Filter>adapter\EvConsumption</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\adapter\EvConsumption\model\EvConsumptionData.cpp">
-      <Filter>adapter\EvConsumption\model</Filter>
+    <ClCompile Include="EnergyInfoAdapter.cpp">
+      <Filter>adapter\Consumption</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -48,20 +48,23 @@
     <ClInclude Include="src\domain\model\ConsumptionData.h">
       <Filter>domain\model</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\EnergyInfo.h">
+    <ClInclude Include="src\domain\EnergyConsumptionService.h">
       <Filter>domain</Filter>
     </ClInclude>
-    <ClInclude Include="src\adapter\EvConsumption\EvEnergyInfo.h">
+    <ClInclude Include="src\adapter\EvConsumption\EvEnergyInfoAdapter.h">
       <Filter>adapter\EvConsumption</Filter>
     </ClInclude>
-    <ClInclude Include="src\adapter\EvConsumption\IEvConsumedEnergy.h">
+    <ClInclude Include="src\adapter\EvConsumption\IEvConsumedEnergyAdapter.h">
       <Filter>adapter\EvConsumption</Filter>
     </ClInclude>
-    <ClInclude Include="src\port\IEnergyInfo.h">
+    <ClInclude Include="src\port\IEnergyInfoPort.h">
       <Filter>port</Filter>
     </ClInclude>
-    <ClInclude Include="src\adapter\EvConsumption\model\EvConsumptionData.h">
-      <Filter>adapter\EvConsumption\model</Filter>
+    <ClInclude Include="IConsumedEnergyAdapter.h">
+      <Filter>adapter\Consumption</Filter>
+    </ClInclude>
+    <ClInclude Include="EnergyInfoAdapter.h">
+      <Filter>adapter\Consumption</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

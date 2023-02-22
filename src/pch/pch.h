@@ -4,17 +4,20 @@
 #include <format>
 #include <cmath>
 
+
 //forward declarations
 class ConsumptionData;
-class EvConsumptionData;
-class IEnergyInfo;
-class IEvConsumedEnergy;
+class IEnergyInfoPort;
+class IEvConsumedEnergyAdapter;
+class IConsumedEnergyAdapter;
 
 using String = std::string;
 using UInt = uint32_t;
 using KWhUnit = double;
-using IEnergyInfoPtr = std::shared_ptr<IEnergyInfo>;
-using IEvConsumedEnergyPtr = std::shared_ptr<IEvConsumedEnergy>;
+
+using EnergyInfoPortPtr = std::shared_ptr<IEnergyInfoPort>;
+using EvEnergyInfoAdapterPtr = std::shared_ptr<IEvConsumedEnergyAdapter>;
+using EnergyInfoAdapterPtr = std::shared_ptr<IConsumedEnergyAdapter>;
 
 template <typename T>
 std::shared_ptr<T> CreateInstance(T* p) {
