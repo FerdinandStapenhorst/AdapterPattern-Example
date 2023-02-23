@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="pch">
+    <Filter Include="_pch">
       <UniqueIdentifier>{512328ce-35e5-4c87-b289-312e69eabda7}</UniqueIdentifier>
     </Filter>
     <Filter Include="domain">
@@ -16,54 +16,51 @@
     <Filter Include="adapter\EvConsumption">
       <UniqueIdentifier>{6e3616e7-915c-4c89-ac57-80a00a62b475}</UniqueIdentifier>
     </Filter>
-    <Filter Include="port">
-      <UniqueIdentifier>{1407c9ce-17bf-4124-bf7b-bb7cbcde3900}</UniqueIdentifier>
-    </Filter>
     <Filter Include="adapter\Consumption">
       <UniqueIdentifier>{d958ff15-6e28-4089-b901-766a7cc21c47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="port">
+      <UniqueIdentifier>{1407c9ce-17bf-4124-bf7b-bb7cbcde3900}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\pch\pch.cpp">
-      <Filter>pch</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\model\ConsumptionData.cpp">
-      <Filter>domain\model</Filter>
-    </ClCompile>
     <ClCompile Include="src\domain\EnergyConsumptionService.cpp">
       <Filter>domain</Filter>
     </ClCompile>
-    <ClCompile Include="src\adapter\EvConsumption\EvEnergyInfoAdapter.cpp">
+    <ClCompile Include="src\adapter\EvConsumption\EvEnergyAdapter.cpp">
       <Filter>adapter\EvConsumption</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="EnergyInfoAdapter.cpp">
+    <ClCompile Include="src\pch\pch.cpp">
+      <Filter>_pch</Filter>
+    </ClCompile>
+    <ClCompile Include="src\adapter\Consumption\EnergyAdapter.cpp">
       <Filter>adapter\Consumption</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\pch\pch.h">
-      <Filter>pch</Filter>
-    </ClInclude>
     <ClInclude Include="src\domain\model\ConsumptionData.h">
       <Filter>domain\model</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\EnergyConsumptionService.h">
       <Filter>domain</Filter>
     </ClInclude>
-    <ClInclude Include="src\adapter\EvConsumption\EvEnergyInfoAdapter.h">
+    <ClInclude Include="src\adapter\EvConsumption\EvEnergyAdapter.h">
       <Filter>adapter\EvConsumption</Filter>
     </ClInclude>
-    <ClInclude Include="src\adapter\EvConsumption\IEvConsumedEnergyAdapter.h">
+    <ClInclude Include="src\adapter\EvConsumption\IEvEnergyAdapter.h">
       <Filter>adapter\EvConsumption</Filter>
     </ClInclude>
     <ClInclude Include="src\port\IEnergyInfoPort.h">
       <Filter>port</Filter>
     </ClInclude>
-    <ClInclude Include="IConsumedEnergyAdapter.h">
+    <ClInclude Include="src\pch\pch.h">
+      <Filter>_pch</Filter>
+    </ClInclude>
+    <ClInclude Include="src\adapter\Consumption\EnergyAdapter.h">
       <Filter>adapter\Consumption</Filter>
     </ClInclude>
-    <ClInclude Include="EnergyInfoAdapter.h">
+    <ClInclude Include="src\adapter\Consumption\IEnergyAdapter.h">
       <Filter>adapter\Consumption</Filter>
     </ClInclude>
   </ItemGroup>

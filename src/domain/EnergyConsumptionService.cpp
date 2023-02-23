@@ -5,7 +5,9 @@
 
 [[nodiscard]] EnergyConsumptionService::EnergyConsumptionService() noexcept
 {
-	LoadConsumption();
+	_ConsumptionData.MilliAmps = 16000;
+	_ConsumptionData.Volt = 240;
+	_ConsumptionData.ElapsedSeconds = 7200;
 }
 
 [[nodiscard]] ConsumptionData EnergyConsumptionService::ConsumedEnergy() const
@@ -13,14 +15,3 @@
 	return _ConsumptionData;
 }
 
-void EnergyConsumptionService::ConsumedEnergy(UInt const& milliAmps, UInt const& volt, UInt const& elapsedSeconds)
-{
-	_ConsumptionData.MiliAmps(milliAmps);
-	_ConsumptionData.Volt(volt);
-	_ConsumptionData.ElapsedSeconds(elapsedSeconds);
-}
-
-void EnergyConsumptionService::LoadConsumption()
-{
-	ConsumedEnergy(16000, 240, 7200);
-}

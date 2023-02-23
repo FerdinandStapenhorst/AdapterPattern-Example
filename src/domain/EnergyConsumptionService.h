@@ -6,15 +6,18 @@
 class EnergyConsumptionService : public IEnergyInfoPort
 {
 public:
+	//Make the default constructor explicit
 	[[nodiscard]] explicit EnergyConsumptionService() noexcept;
+	//Delete copy constructor which prohibits copy-construct, assigning, move-construct and moving
 	EnergyConsumptionService(const EnergyConsumptionService& other) noexcept = delete;
-	EnergyConsumptionService(EnergyConsumptionService&& other) noexcept = delete;
+	virtual~EnergyConsumptionService() = default;
 
+	//IEnergyInfoPort overrides
 	virtual [[nodiscard]] ConsumptionData ConsumedEnergy() const override;
 
 private:
-	void ConsumedEnergy(UInt const& milliAmps, UInt const& volt, UInt const& elapsedSeconds);
 	ConsumptionData _ConsumptionData;
-	void LoadConsumption();
 };
+
+
 

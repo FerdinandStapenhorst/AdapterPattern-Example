@@ -1,8 +1,8 @@
 #pragma once
 #include "pch.h"
 
-//Default consumption adapter interface
-class IConsumedEnergyAdapter {
+//Ev consumption adapter interface
+class IEvEnergyAdapter {
 public:
 	virtual [[nodiscard]] String ToString() const noexcept = 0;
 };

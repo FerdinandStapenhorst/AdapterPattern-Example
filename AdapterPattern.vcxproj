@@ -72,7 +72,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)src\pch;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain;$(ProjectDir)src\adapter\EvConsumption;$(ProjectDir)src\port;$(ProjectDir)src\adapter\EvConsumption\model;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)src\pch;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain;$(ProjectDir)src\adapter\EvConsumption;$(ProjectDir)src\port;$(ProjectDir)src\adapter\Consumption;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(ProjectDir)src\pch;$(ProjectDir)src\domain\model;$(ProjectDir)src\domain;$(ProjectDir)src\adapter\EvConsumption;$(ProjectDir)src\port;$(ProjectDir)src\adapter\EvConsumption\model;$(IncludePath)</IncludePath>
@@ -147,21 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EnergyInfoAdapter.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\adapter\EvConsumption\EvEnergyInfoAdapter.cpp" />
+    <ClCompile Include="src\adapter\Consumption\EnergyAdapter.cpp" />
+    <ClCompile Include="src\adapter\EvConsumption\EvEnergyAdapter.cpp" />
     <ClCompile Include="src\domain\EnergyConsumptionService.cpp" />
-    <ClCompile Include="src\domain\model\ConsumptionData.cpp" />
     <ClCompile Include="src\pch\pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EnergyInfoAdapter.h" />
-    <ClInclude Include="IConsumedEnergyAdapter.h" />
-    <ClInclude Include="src\adapter\EvConsumption\EvEnergyInfoAdapter.h" />
-    <ClInclude Include="src\adapter\EvConsumption\IEvConsumedEnergyAdapter.h" />
+    <ClInclude Include="src\adapter\Consumption\EnergyAdapter.h" />
+    <ClInclude Include="src\adapter\Consumption\IEnergyAdapter.h" />
+    <ClInclude Include="src\adapter\EvConsumption\EvEnergyAdapter.h" />
+    <ClInclude Include="src\adapter\EvConsumption\IEvEnergyAdapter.h" />
     <ClInclude Include="src\domain\EnergyConsumptionService.h" />
     <ClInclude Include="src\domain\model\ConsumptionData.h" />
     <ClInclude Include="src\pch\pch.h" />
